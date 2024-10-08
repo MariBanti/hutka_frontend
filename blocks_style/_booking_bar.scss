@@ -1,0 +1,57 @@
+.booking-bar {
+	display: flex;
+	justify-content: space-between;
+	font-family: "Montserrat";
+	height: auto;
+	background-color: var(--main-gray);
+	border-radius: 30px;
+	padding: 0px;
+	margin: 20px;
+
+	div {
+			padding: 10px;
+			flex: 1;
+			text-align: center;
+			position: relative;
+	}
+}
+
+input,
+select {
+	font-family: "Montserrat";
+	color: #a19d9d;
+	width: 90%;
+	padding: 10px;
+	border-radius: 5px;
+	border: none;
+	background-color: var(--main-gray);
+	outline: none;
+
+	&[type="date"] {
+			padding: 15px;
+			position: absolute;
+			transform: translate(-50%, -50%);
+			top: 50%;
+			left: 50%;
+			font-size: 14px;
+			border: none;
+			outline: none;
+			border-radius: 5px;
+
+			&::-webkit-calendar-picker-indicator {
+					color: var(--dark-gray);
+			}
+	}
+}
+
+.search-button {
+	background-color: var(--main-orange);
+	color: var(--white);
+	border: none;
+	padding: 0;
+	margin: 0;
+	height: 100;
+	width: 90px;
+	border-radius: 30px;
+	cursor: pointer;
+}

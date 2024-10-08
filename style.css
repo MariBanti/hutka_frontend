@@ -1,247 +1,232 @@
 :root {
-	--main-orange: #ff9f00;
-	--main-gray: #f4f4f4;
-	--dark-gray: #a19d9d;
-	--white: #ffffff;
+  --main-orange: #ff9f00;
+  --main-gray: #f4f4f4;
+  --dark-gray: #a19d9d;
+  --white: #ffffff;
 }
 
 @font-face {
-	font-family: "Montserrat";
-	src: url("./fonts/Montserrat-Regular.woff2") format("woff2");
-	font-weight: 200;
-	font-style: normal;
-	font-display: swap;
+  font-family: "Montserrat";
+  src: url("./fonts/Montserrat-Regular.woff2") format("woff2");
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
 }
-
 @font-face {
-	font-family: "Montserrat-Bold";
-	src: url("./fonts/Montserrat-Bold.woff2") format("woff2");
-	font-weight: 200;
-	font-style: normal;
-	font-display: swap;
+  font-family: "Montserrat-Bold";
+  src: url("./fonts/Montserrat-Bold.woff2") format("woff2");
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
 }
-
 @font-face {
-	font-family: "Shantell_Sans";
-	src: url("/fonts/ShantellSans-Regular.woff2") format("woff2");
+  font-family: "Shantell_Sans";
+  src: url("/fonts/ShantellSans-Regular.woff2") format("woff2");
+}
+a {
+  text-decoration: none;
 }
 
-a{
-	text-decoration: none;
-}
 body {
-	font-family: Montserrat, Arial, sans-serif;
-	margin: 0;
-	padding: 0;
+  font-family: Montserrat, Arial, sans-serif;
+  margin: 0;
+  padding: 0;
 }
+
 header {
-	display: flex;
-	height: 8vh;
-	align-items: center;
-	background-color: var(--main-orange);
-	padding: 10px 20px;
+  display: flex;
+  height: 8vh;
+  align-items: center;
+  background-color: var(--main-orange);
+  padding: 10px 20px;
 }
 header .logo {
-	font-family: Shantell_Sans, Montserrat, Arial;
-	font-size: 45px;
-	font-weight: bold;
-	color: var(--white);
+  font-family: Shantell_Sans, Montserrat, Arial;
+  font-size: 45px;
+  font-weight: bold;
+  color: var(--white);
 }
-
 header .utka_logo {
-	border-radius: 100%;
+  border-radius: 100%;
 }
-nav {
-	display: flex;
-	flex-grow: 1;
-	justify-content: end;
+header nav {
+  display: flex;
+  flex-grow: 1;
+  justify-content: end;
+}
+header nav div {
+  display: contents;
+  flex-grow: 1;
+}
+header nav div a {
+  color: var(--white);
+  text-decoration: none;
+  text-align: center;
+  padding-right: 3vh;
+  font-size: 170%;
+}
+header nav div img {
+  margin: 7px;
 }
 
-nav div {
-	display: contents;
-	flex-grow: 1;
-}
-nav div a {
-	color: var(--white);
-	text-decoration: none;
-	text-align: center;
-	padding-right: 3vh;
-	font-size: 170%;
-}
-
-nav div img {
-	margin: 7px;
-}
 .registration-button {
-	background-color: var(--white);
-	color: var(--main-orange);
-	border: 2px solid var(--main-orange);
-	padding: 10px 20px;
-	margin: 10px;
-	border-radius: 20px;
-	cursor: pointer;
-}
-
-h1 {
-	display: flex;
-	margin: 50px;
-	justify-content: center;
-	color: #ff9f00;
+  background-color: var(--white);
+  color: var(--main-orange);
+  border: 2px solid var(--main-orange);
+  padding: 10px 20px;
+  margin: 10px;
+  border-radius: 20px;
+  cursor: pointer;
 }
 
 .booking-bar {
-	display: flex;
-	justify-content: space-between;
-	font-family: "Montserrat";
-	height: auto;
-	background-color: var(--main-gray);
-	border-radius: 30px;
-	padding: 0px;
-	margin: 20px;
+  display: flex;
+  justify-content: space-between;
+  font-family: "Montserrat";
+  height: auto;
+  background-color: var(--main-gray);
+  border-radius: 30px;
+  padding: 0px;
+  margin: 20px;
 }
-
 .booking-bar div {
-	padding: 10px;
-	flex: 1;
-	text-align: center;
-	position: relative;
+  padding: 10px;
+  flex: 1;
+  text-align: center;
+  position: relative;
 }
 
 input,
 select {
-	font-family: "Montserrat";
-	color: #a19d9d;
-	width: 90%;
-	padding: 10px;
-	border-radius: 5px;
-	border: none;
-	background-color: var(--main-gray);
-	outline: none;
+  font-family: "Montserrat";
+  color: #a19d9d;
+  width: 90%;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  background-color: var(--main-gray);
+  outline: none;
 }
-
-input[type="date"] {
-	padding: 15px;
-	position: absolute;
-	transform: translate(-50%, -50%);
-	top: 50%;
-	left: 50%;
-	font-size: 14px;
-	border: none;
-	outline: none;
-	border-radius: 5px;
+input[type=date],
+select[type=date] {
+  padding: 15px;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  font-size: 14px;
+  border: none;
+  outline: none;
+  border-radius: 5px;
 }
-
-input[type="date"]::-webkit-calendar-picker-indicator {
-	color: var(--dark-gray);
+input[type=date]::-webkit-calendar-picker-indicator,
+select[type=date]::-webkit-calendar-picker-indicator {
+  color: var(--dark-gray);
 }
 
 .search-button {
-	background-color: var(--main-orange);
-	color: var(--white);
-	border: none;
-	padding: 0px;
-	margin: 0px;
-	height: 100;
-	width: 90px;
-	border-radius: 30px;
-	cursor: pointer;
+  background-color: var(--main-orange);
+  color: var(--white);
+  border: none;
+  padding: 0;
+  margin: 0;
+  height: 100;
+  width: 90px;
+  border-radius: 30px;
+  cursor: pointer;
 }
 
 .panel {
-	background-color: #ffdca7;
-	font-family: Montserrat;
-	margin-top: 2x;
-	height: 60vh;
-	width: fit-content;
-	display: flex;
-	padding: 10px;
-	padding-top: 30px;
-	justify-content: space-between;
+  background-color: #ffdca7;
+  font-family: Montserrat;
+  margin-top: 2x;
+  height: 60vh;
+  width: -moz-fit-content;
+  width: fit-content;
+  display: flex;
+  padding: 10px;
+  padding-top: 30px;
+  justify-content: space-between;
 }
-
 .panel div {
-	width: 30%;
-	text-align: center;
-	justify-content: center;
+  width: 30%;
+  text-align: center;
+  justify-content: center;
 }
 
 .flights {
-	font:Montserrat;
-	color: var(--dark-gray);
-	display: flex;
-	width: 60%;
-	flex-direction: column;
-	justify-content: space-between;
-	margin: 20px;
+  font-family: Montserrat;
+  color: var(--dark-gray);
+  display: flex;
+  width: 60%;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 20px;
 }
+
 .flight-card {
-	background-color: var(--main-gray);
-	margin: 10px;
-	border-radius: 10px;
-	height: 20vh;
-	margin-right: 20px;
-	padding: 10px;
-	display:flex;
+  background-color: var(--main-gray);
+  margin: 10px;
+  border-radius: 10px;
+  height: 20vh;
+  margin-right: 20px;
+  padding: 10px;
+  display: flex;
+}
+.flight-card .flight-info {
+  padding: auto;
+  padding-inline: 10px;
+  display: flex;
+  width: 75%;
+  flex-direction: column;
+}
+.flight-card .flight-info .time,
+.flight-card .flight-info .trip-towns,
+.flight-card .flight-info .other-info {
+  display: flex;
+  flex-grow: 1;
+  justify-content: space-between;
+}
+.flight-card .flight-info .trip-towns .city {
+  font-family: Montserrat-Bold;
+  font-size: 130%;
+}
+.flight-card .flight-info .trip-towns .station {
+  font-size: small;
+}
+.flight-card .flight-info .travel-time {
+  color: black;
+}
+.flight-card .flight-info .departure-time,
+.flight-card .flight-info .arrival-time {
+  color: black;
+  font-family: Montserrat-Bold;
+  font-weight: 700;
+  padding: 1%;
+  font-size: 200%;
+}
+.flight-card .flight-info .details-link {
+  color: var(--dark-gray);
+}
+.flight-card .flight-price {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  font-family: Montserrat-Bold;
+  color: black;
+}
+.flight-card .flight-price .price {
+  font-size: 300%;
+  font-weight: 700;
 }
 
-.flight-info{
-	padding: auto;
-	padding-inline: 10px;
-	display:flex;
-	width: 75%;
-	flex-direction: column;
-}
-
-.flight-info .time, .trip-towns, .other-info{
-	display: flex;
-	flex-grow: 1;
-	justify-content: space-between;
-}
-
-.trip-towns .city{
-	font: Montserrat-Bold;
- font-size: 130%;
-}
-
-.trip-towns .station{
-	font-size: small;
-}
-
-.travel-time{
-	color:black;
-}
-.departure-time, .arrival-time{
-	color:black;
-	font:Montserrat-Bold;
-	font-weight: 700;
-	padding: 1%;
-	font-size: 200%;
-}
-
-.details-link{
-	color:var(--dark-gray0);
-}
-
-.flight-price{
-	display: flex;
-	flex-direction: column;
-	justify-content: space-around;
-	align-items: center;
-	font: Montserrat-Bold;
-	color:black;
-}
-
-.price{
-	font-size: 300%;
-	font-weight: 700;
-}
-
-.order-button{
-	width: 100%;
-	height: 30%;
-	background-color:var(--main-orange);
-	border:none;
-	border-radius:20px;
-	color:white;
-	font-size: medium;
-}
+.order-button {
+  width: 100%;
+  height: 30%;
+  background-color: var(--main-orange);
+  border: none;
+  border-radius: 20px;
+  color: white;
+  font-size: medium;
+}/*# sourceMappingURL=style.css.map */
