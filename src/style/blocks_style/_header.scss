@@ -1,0 +1,51 @@
+header {
+	display: flex;
+	height: 8vh;
+	align-items: center;
+	background-color: var(--main-orange);
+	padding: 10px 20px;
+
+	.logo {
+			font-family: Shantell_Sans, Montserrat, Arial;
+			font-size: 45px;
+			font-weight: bold;
+			color: var(--white);
+	}
+
+	.utka_logo {
+			border-radius: 100%;
+	}
+
+	nav {
+			display: flex;
+			flex-grow: 1;
+			justify-content: end;
+
+			div {
+					display: contents;
+					flex-grow: 1;
+
+					a {
+							color: var(--white);
+							text-decoration: none;
+							text-align: center;
+							padding-right: 3vh;
+							font-size: 170%;
+					}
+
+					img {
+							margin: 7px;
+					}
+			}
+	}
+}
+
+.registration-button {
+	background-color: var(--white);
+	color: var(--main-orange);
+	border: 2px solid var(--main-orange);
+	padding: 10px 20px;
+	margin: 10px;
+	border-radius: 20px;
+	cursor: pointer;
+}
