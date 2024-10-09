@@ -7,24 +7,28 @@
 
 @font-face {
   font-family: "Montserrat";
-  src: url("./fonts/Montserrat-Regular.woff2") format("woff2");
+  src: url("/src/style/fonts/Montserrat-Regular.woff2") format("woff2");
   font-weight: 200;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "Montserrat-Bold";
-  src: url("./fonts/Montserrat-Bold.woff2") format("woff2");
+  src: url("/src/style/fonts/Montserrat-Bold.woff2") format("woff2");
   font-weight: 200;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "Shantell_Sans";
-  src: url("/fonts/ShantellSans-Regular.woff2") format("woff2");
+  src: url("/src/style/fonts/ShantellSans-Regular.woff2") format("woff2");
 }
 a {
   text-decoration: none;
+}
+
+h1 {
+  text-align: center;
 }
 
 body {
@@ -154,7 +158,10 @@ select[type=date]::-webkit-calendar-picker-indicator {
   justify-content: center;
 }
 
-.flights {
+.listOfFlight {
+  display: flex;
+}
+.listOfFlight .flights {
   font-family: Montserrat;
   color: var(--dark-gray);
   display: flex;
@@ -163,8 +170,7 @@ select[type=date]::-webkit-calendar-picker-indicator {
   justify-content: space-between;
   margin: 20px;
 }
-
-.flight-card {
+.listOfFlight .flight-card {
   background-color: var(--main-gray);
   margin: 10px;
   border-radius: 10px;
@@ -173,42 +179,54 @@ select[type=date]::-webkit-calendar-picker-indicator {
   padding: 10px;
   display: flex;
 }
-.flight-card .flight-info {
+.listOfFlight .flight-card .flight-info {
   padding: auto;
   padding-inline: 10px;
   display: flex;
   width: 75%;
   flex-direction: column;
 }
-.flight-card .flight-info .time,
-.flight-card .flight-info .trip-towns,
-.flight-card .flight-info .other-info {
+.listOfFlight .flight-card .flight-info .time {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.listOfFlight .flight-card .flight-info .time hr {
+  width: 20%;
+  border-color: var(--main-orange);
+  color: var(--main-orange);
+}
+.listOfFlight .flight-card .flight-info .time,
+.listOfFlight .flight-card .flight-info .trip-towns,
+.listOfFlight .flight-card .flight-info .other-info {
   display: flex;
   flex-grow: 1;
   justify-content: space-between;
 }
-.flight-card .flight-info .trip-towns .city {
+.listOfFlight .flight-card .flight-info .trip-towns .city {
   font-family: Montserrat-Bold;
   font-size: 130%;
 }
-.flight-card .flight-info .trip-towns .station {
+.listOfFlight .flight-card .flight-info .trip-towns .station {
   font-size: small;
 }
-.flight-card .flight-info .travel-time {
+.listOfFlight .flight-card .flight-info .travel-time {
   color: black;
+  font-weight: 300;
 }
-.flight-card .flight-info .departure-time,
-.flight-card .flight-info .arrival-time {
+.listOfFlight .flight-card .flight-info .departure-time,
+.listOfFlight .flight-card .flight-info .arrival-time {
   color: black;
   font-family: Montserrat-Bold;
   font-weight: 700;
   padding: 1%;
   font-size: 200%;
 }
-.flight-card .flight-info .details-link {
+.listOfFlight .flight-card .flight-info .details-link {
   color: var(--dark-gray);
 }
-.flight-card .flight-price {
+.listOfFlight .flight-card .flight-price {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -216,9 +234,64 @@ select[type=date]::-webkit-calendar-picker-indicator {
   font-family: Montserrat-Bold;
   color: black;
 }
-.flight-card .flight-price .price {
+.listOfFlight .flight-card .flight-price .price {
   font-size: 300%;
   font-weight: 700;
+}
+.listOfFlight .sortFlights {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+}
+.listOfFlight .sortFlights .stops {
+  text-align: center;
+  font-size: 150%;
+  font-weight: bold;
+  background-color: var(--main-gray);
+  border-radius: 10px;
+  height: 20vh;
+  margin: 20px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.listOfFlight .sortFlights .stops input {
+  font-size: 75%;
+}
+.listOfFlight .sortFlights .stops hr {
+  width: 100%;
+}
+.listOfFlight .sort {
+  font-size: 150%;
+  font-weight: bold;
+  background-color: var(--main-gray);
+  border-radius: 10px;
+  height: 10vh;
+  margin: 20px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+}
+.listOfFlight .sort hr {
+  border-color: white;
+}
+.listOfFlight .sort .sortButton {
+  display: flex;
+  flex-direction: row;
+  background-color: var(--main-orange);
+  height: 60%;
+  margin: -10px;
+  border-radius: 10px;
+}
+.listOfFlight .sort .sortButton .sortButtonTime, .listOfFlight .sort .sortButton .sortButtonPrice {
+  background-color: var(--main-orange);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  width: 50%;
 }
 
 .order-button {
@@ -229,4 +302,4 @@ select[type=date]::-webkit-calendar-picker-indicator {
   border-radius: 20px;
   color: white;
   font-size: medium;
-}/*# sourceMappingURL=style.css.map */
+}/*# sourceMappingURL=index.css.map */
