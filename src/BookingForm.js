@@ -52,7 +52,6 @@ const BookingForm = ({ onSubmit }) => {
             </div>
             <div>
                 <input type="date" className="select_date" value={date} onChange={(e) => setDate(e.target.value)} style={{ borderColor: !isValid && !date ? 'red' : '' }} />
-                Дата
             </div>
             <div>
                 <select id="select_pas" value={passengers} onChange={(e) => setPassengers(e.target.value)} style={{ borderColor: !isValid && !passengers ? 'red' : '' }}>

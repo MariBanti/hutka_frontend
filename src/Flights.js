@@ -8,11 +8,6 @@ const Flights = () => {
 	return (
 		<main>
 			<div className="listOfFlight">
-				<div className="flights">
-					<Flight />
-					<Flight />
-					<Flight />
-				</div>
 				<div className="sortFlights">
 					<div className="stops">
 						Остановки
@@ -31,12 +26,17 @@ const Flights = () => {
 
 					<div className="sort">
 						Сортировать по
-                        <div className="sortButton">   
-						<button className="sortButtonTime">Времени</button>
-                        <hr></hr>
-						<button className="sortButtonPrice">Цене</button>
-                        </div>
+						<div className="sortButton">
+							<button className="sortButtonTime">Времени</button>
+							<hr></hr>
+							<button className="sortButtonPrice">Цене</button>
+						</div>
 					</div>
+				</div>
+				<div className="flights">
+					<Flight />
+					<Flight />
+					<Flight />
 				</div>
 			</div>
 		</main>

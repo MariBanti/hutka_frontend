@@ -3,9 +3,9 @@
 	flex-direction: column;
 
 	.return {
-		margin: 15px;
+		margin: 0.9375rem;
 		.labelForReturn {
-			font-size: 20px;
+			font-size: 1.25rem;
 			font-weight: bold;
 		}
 		.returnBackToMainPage {
@@ -13,8 +13,8 @@
 			background-color: white;
 
 			img {
-				width: 20px;
-				height: 20px;
+				width: 1.25rem;
+				height: 1.25rem;
 				cursor: pointer;
 			}
 		}
@@ -23,17 +23,22 @@
 	.registrationInfo {
 		display: flex;
 		flex-direction: row;
+		flex-wrap: wrap;
 
 		.registrationFlight {
 			background-color: var(--main-gray);
-			margin: 10px;
+			margin: 0.625rem;
 			border-radius: 10px;
-			height: 20vh;
-			margin-right: 20px;
-			padding: 10px;
+			height: auto;
+			margin-right: 1.25rem;
+			padding: 0.625rem;
 			display: flex;
 			width: 60%;
 			flex-direction: column;
+
+			@media (max-width: 768px) {
+				width: 100%;
+			}
 
 			.time {
 				display: flex;
@@ -82,24 +87,28 @@
 
 		.busInfo {
 			background-color: var(--main-gray);
-			margin: 10px;
+			margin: 0.625rem;
 			border-radius: 10px;
-			height: 20vh;
-			margin-right: 20px;
-			padding: 10px;
+			height: auto;
+			margin-right: 1.25rem;
+			padding: 0.625rem;
 			display: flex;
 			width: 30%;
 			flex-direction: column;
 
+			@media (max-width: 768px) {
+				width: 100%;
+			}
+
 			.labelForInfo {
-				margin: 10px;
+				margin: 0.625rem;
 				font-weight: bold;
 				font-size: large;
 			}
 
 			.busModel {
 				color: var(--dark-gray);
-				margin-top: 20px;
+				margin-top: 1.25rem;
 			}
 		}
 	}
@@ -107,30 +116,36 @@
 	.clientInfo {
 		display: flex;
 		flex-direction: row;
-		height: 60vh;
+		flex-wrap: wrap;
+		height: auto;
 
 		.clientContactInfo {
 			background-color: white;
-			margin: 10px;
+			margin: 0.625rem;
 			border-radius: 10px;
-			height: 100%;
-			margin-right: 20px;
-			padding: 10px;
+			height: auto;
+			margin-right: 1.25rem;
+			padding: 0.625rem;
 			display: flex;
 			width: 60%;
 			flex-direction: column;
 			color: var(--gray-black);
 
+			@media (max-width: 768px) {
+				width: 100%;
+				align-content: center;
+			}
+
 			div {
-				margin-left: 10px;
+				margin-left: 0.625rem;
 				color: black;
 				font-weight: bold;
 				font-size: large;
-				margin-bottom: 10px;
+				margin-bottom: 0.625rem;
 			}
 
 			label {
-				margin-top: 10px;
+				margin-top: 0.625rem;
 			}
 
 			input {
@@ -141,23 +156,27 @@
 
 		.ticketType {
 			background-color: white;
-			margin: 10px;
+			margin: 0.625rem;
 			border-radius: 10px;
-			height: 100%;
-			margin-right: 20px;
-			padding: 10px;
+			height: auto;
+			margin-right: 1.25rem;
+			padding: 0.625rem;
 			display: flex;
-			width: 60%;
+			width: 30%;
 			flex-direction: column;
 			color: var(--gray-black);
 
+			@media (max-width: 768px) {
+				width: 100%;
+			}
+
 			.ticketText {
-				margin-left: 10px;
-				margin-bottom: 20px;
+				margin-left: 0.625rem;
+				margin-bottom: 1.25rem;
 				color: black;
 				font-weight: bold;
 				font-size: large;
-				margin-bottom: 10px;
+				margin-bottom: 0.625rem;
 			}
 
 			form {
@@ -165,14 +184,16 @@
 				width: min-content;
 				border-radius: 10px;
 				height: max-content;
-				margin-block: 20px;
+				margin-block: 1.25rem;
 				display: flex;
 				flex-direction: row;
 				justify-content: space-between;
 
+				@media (max-width: 786px) {
+					flex-direction: column;
+				}
 				.adult,
 				.benefit {
-
 					display: flex;
 					align-items: center;
 					font-size: larger;
@@ -187,8 +208,8 @@
 						align-items: center;
 
 						img {
-							height: 20px;
-							width: 20px;
+							height: 1.25rem;
+							width: 1.25rem;
 						}
 					}
 
@@ -198,24 +219,24 @@
 						margin: 0;
 					}
 					input {
-						width: 25px;
-						margin-left: 5px;
+						width: 1.5625rem;
+						margin-left: 0.3125rem;
 					}
 				}
 			}
 
 			.textAboutbenefit {
 				text-align: end;
-				margin-block: 20px;
+				margin-block: 1.25rem;
 			}
 
 			.resultPrice {
 				font-family: "Montserrat-Bold";
 				color: black;
 				font-weight: 700;
-				font-size: xx-large;
+				font-size: 2rem;
 				text-align: end;
-				margin-bottom: 10px;
+				margin-bottom: 0.625rem;
 			}
 
 			.buttonsForBookOrBuy {
@@ -225,11 +246,11 @@
 
 				.bookButton,
 				.buyButton {
-					width: 45%;
+					width: 48%;
 					background-color: var(--main-orange);
 					border: none;
 					border-radius: 20px;
-					padding: 15px;
+					padding: 0.9375rem;
 					color: white;
 					height: auto;
 					font-size: large;

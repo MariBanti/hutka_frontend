@@ -1,51 +1,107 @@
 header {
-	display: flex;
-	height: 8vh;
-	align-items: center;
-	background-color: var(--main-orange);
-	padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  background-color: var(--main-orange);
+  padding: 10px 20px;
+  width: 100%;
+  box-sizing: border-box;
+	height: auto;
+}
 
-	.logo {
-			font-family: Shantell_Sans, Montserrat, Arial;
-			font-size: 45px;
-			font-weight: bold;
-			color: var(--white);
-	}
+.logo {
+  font-family: Shantell_Sans, Montserrat, Arial;
+  font-size: 45px;
+  font-weight: bold;
+  color: var(--white);
+  flex-shrink: 0;
+}
 
-	.utka_logo {
-			border-radius: 100%;
-	}
+.utka_logo {
+  border-radius: 100%;
+  width: 50px;
+  height: 50px;
+  margin-right: 20px;
+  flex-shrink: 0;
+}
 
-	nav {
-			display: flex;
-			flex-grow: 1;
-			justify-content: end;
+nav {
+  display: flex;
+  justify-content: flex-end;
+  flex-grow: 1;
+}
 
-			div {
-					display: contents;
-					flex-grow: 1;
+nav div {
+  display: flex;
+  align-items: center;
+}
 
-					a {
-							color: var(--white);
-							text-decoration: none;
-							text-align: center;
-							padding-right: 3vh;
-							font-size: 170%;
-					}
-
-					img {
-							margin: 7px;
-					}
-			}
-	}
+nav a {
+  color: var(--white);
+  text-decoration: none;
+  text-align: center;
+  padding-right: 30px;
+  font-size: 170%;
+  flex-grow: 1;
 }
 
 .registration-button {
-	background-color: var(--white);
-	color: var(--main-orange);
-	border: 2px solid var(--main-orange);
-	padding: 10px 20px;
-	margin: 10px;
-	border-radius: 20px;
-	cursor: pointer;
+  background-color: var(--white);
+  color: var(--main-orange);
+  border: 2px solid var(--main-orange);
+  padding: 10px 20px;
+  margin: 10px;
+  border-radius: 20px;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+  header {
+    padding: 8px 15px;
+    height: auto;
+  }
+
+  .logo {
+    font-size: 35px;
+  }
+
+  .utka_logo {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+  }
+
+	nav{
+		font-size: 10px;
+	 img{
+		display: none;
+	}}
+
+  .registration-button {
+    padding: 8px 15px;
+    margin: 8px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+ 
+  .logo {
+    font-size: 24px;
+		margin-right: 40vw;
+  }
+
+  .utka_logo {
+    display: none;
+  }
+
+  nav {
+    display: none;
+  }
+
+  .registration-button {
+    padding: 6px 10px;
+    margin: 6px;
+    font-size: 12px;
+  }
 }

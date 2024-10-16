@@ -30,6 +30,7 @@ a {
 
 h1 {
   text-align: center;
+  color: var(--main-orange);
 }
 
 body {
@@ -46,38 +47,48 @@ hr {
 
 header {
   display: flex;
-  height: 8vh;
   align-items: center;
   background-color: var(--main-orange);
   padding: 10px 20px;
+  width: 100%;
+  box-sizing: border-box;
+  height: auto;
 }
-header .logo {
+
+.logo {
   font-family: Shantell_Sans, Montserrat, Arial;
   font-size: 45px;
   font-weight: bold;
   color: var(--white);
+  flex-shrink: 0;
 }
-header .utka_logo {
+
+.utka_logo {
   border-radius: 100%;
+  width: 50px;
+  height: 50px;
+  margin-right: 20px;
+  flex-shrink: 0;
 }
-header nav {
+
+nav {
   display: flex;
-  flex-grow: 1;
-  justify-content: end;
-}
-header nav div {
-  display: contents;
+  justify-content: flex-end;
   flex-grow: 1;
 }
-header nav div a {
+
+nav div {
+  display: flex;
+  align-items: center;
+}
+
+nav a {
   color: var(--white);
   text-decoration: none;
   text-align: center;
-  padding-right: 3vh;
+  padding-right: 30px;
   font-size: 170%;
-}
-header nav div img {
-  margin: 7px;
+  flex-grow: 1;
 }
 
 .registration-button {
@@ -88,85 +99,242 @@ header nav div img {
   margin: 10px;
   border-radius: 20px;
   cursor: pointer;
+  flex-shrink: 0;
 }
 
-.booking-bar {
-  display: flex;
-  justify-content: space-between;
-  font-family: "Montserrat";
-  height: auto;
-  background-color: var(--main-gray);
-  border-radius: 30px;
-  padding: 0px;
-  margin: 20px;
+@media (max-width: 768px) {
+  header {
+    padding: 8px 15px;
+    height: auto;
+  }
+  .logo {
+    font-size: 35px;
+  }
+  .utka_logo {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+  }
+  nav {
+    font-size: 10px;
+  }
+  nav img {
+    display: none;
+  }
+  .registration-button {
+    padding: 8px 15px;
+    margin: 8px;
+    font-size: 14px;
+  }
 }
-.booking-bar div {
-  padding: 10px;
-  flex: 1;
-  text-align: center;
-  position: relative;
+@media (max-width: 480px) {
+  .logo {
+    font-size: 24px;
+    margin-right: 40vw;
+  }
+  .utka_logo {
+    display: none;
+  }
+  nav {
+    display: none;
+  }
+  .registration-button {
+    padding: 6px 10px;
+    margin: 6px;
+    font-size: 12px;
+  }
 }
-
-input,
-select {
-  font-family: "Montserrat";
-  color: #a19d9d;
-  width: 90%;
-  padding: 10px;
-  border-radius: 5px;
-  border: none;
-  background-color: var(--main-gray);
-  outline: none;
+@media (max-width: 480px) {
+  header {
+    padding: 6px 10px;
+  }
+  header .logo {
+    font-size: 24px;
+  }
+  header nav div a {
+    padding-right: 1vh;
+    font-size: 100%;
+  }
+  header .utka_logo {
+    width: 30px;
+    margin-right: 5px;
+  }
+  header .registration-button {
+    padding: 6px 10px;
+    margin: 6px;
+    font-size: 12px;
+  }
+  .booking-bar {
+    height: auto;
+    background-color: var(--main-gray);
+    border-radius: 30px;
+    padding: 0px;
+    margin: 20px;
+    flex-direction: column;
+    border-radius: 15px;
+    margin: 10px;
+  }
+  .booking-bar div {
+    flex-basis: auto;
+    padding: 6px;
+  }
+  .panel {
+    height: auto;
+    flex-direction: column;
+    align-items: center;
+  }
+  .panel div {
+    width: 90%;
+    margin: 15px 0;
+  }
 }
-input[type=date],
-select[type=date] {
-  padding: 15px;
-  position: absolute;
-  transform: translate(-50%, -50%);
-  top: 50%;
-  left: 50%;
-  font-size: 14px;
-  border: none;
-  outline: none;
-  border-radius: 5px;
+@media (max-width: 768px) {
+  .booking-bar {
+    height: auto;
+    background-color: var(--main-gray);
+    border-radius: 30px;
+    padding: 0px;
+    margin: 20px;
+    flex-wrap: wrap;
+    border-radius: 20px;
+    margin: 15px;
+  }
+  .booking-bar div {
+    flex-basis: 50%;
+    padding: 8px;
+  }
+  .booking-bar input,
+  .booking-bar select {
+    width: 100%;
+  }
+  .booking-bar .search-button {
+    width: 100%;
+    border-radius: 20px;
+  }
+  input,
+  select {
+    width: 100%;
+    padding: 8px;
+    font-family: "Montserrat";
+    color: #a19d9d;
+    width: 90%;
+    padding: 10px;
+    border-radius: 15px;
+    border: none;
+    background-color: var(--main-gray);
+    outline: none;
+  }
+  input[type=date],
+  select[type=date] {
+    padding: 12px;
+    font-size: 12px;
+    width: 97%;
+  }
+  .search-button {
+    height: 40px;
+    width: 100%;
+    border-radius: 20px;
+    border: none;
+    color: white;
+    background-color: var(--main-orange);
+  }
 }
-input[type=date]::-webkit-calendar-picker-indicator,
-select[type=date]::-webkit-calendar-picker-indicator {
-  color: var(--dark-gray);
+@media (min-width: 769px) {
+  .booking-bar {
+    display: flex;
+    justify-content: space-between;
+    font-family: "Montserrat";
+    height: auto;
+    background-color: var(--main-gray);
+    border-radius: 30px;
+    padding: 0px;
+    margin: 20px;
+  }
+  .booking-bar div {
+    padding: 10px;
+    flex: 1;
+    text-align: center;
+    position: relative;
+  }
+  input,
+  select {
+    font-family: "Montserrat";
+    color: #a19d9d;
+    width: 90%;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    background-color: var(--main-gray);
+    outline: none;
+  }
+  input[type=date],
+  select[type=date] {
+    padding: 15px;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    font-size: 14px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+  }
+  input[type=date]::-webkit-calendar-picker-indicator,
+  select[type=date]::-webkit-calendar-picker-indicator {
+    color: var(--dark-gray);
+  }
+  .search-button {
+    background-color: var(--main-orange);
+    color: var(--white);
+    border: none;
+    padding: 0;
+    margin: 0;
+    height: 100;
+    width: 90px;
+    border-radius: 30px;
+    cursor: pointer;
+  }
 }
-
-.search-button {
-  background-color: var(--main-orange);
-  color: var(--white);
-  border: none;
-  padding: 0;
-  margin: 0;
-  height: 100;
-  width: 90px;
-  border-radius: 30px;
-  cursor: pointer;
-}
-
 .panel {
   background-color: #ffdca7;
   font-family: Montserrat;
-  margin-top: 2x;
-  height: 60vh;
-  width: -moz-fit-content;
-  width: fit-content;
+  margin-top: 2rem;
+  height: auto;
+  width: auto;
   display: flex;
-  padding: 10px;
-  padding-top: 30px;
+  flex-wrap: wrap;
+  padding: 1rem;
+  padding-top: 2rem;
   justify-content: space-between;
+}
+@media (max-width: 786px) {
+  .panel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 }
 .panel div {
   width: 30%;
   text-align: center;
   justify-content: center;
 }
+@media (max-width: 768px) {
+  .panel div {
+    width: 45%;
+    flex-direction: row;
+  }
+}
+@media (max-width: 480px) {
+  .panel div {
+    width: 100%;
+  }
+}
 
 .listOfFlight {
   display: flex;
+  flex-direction: row-reverse;
+  flex-wrap: wrap;
 }
 .listOfFlight .flights {
   font-family: Montserrat;
@@ -175,20 +343,26 @@ select[type=date]::-webkit-calendar-picker-indicator {
   width: 60%;
   flex-direction: column;
   justify-content: space-between;
-  margin: 20px;
+  margin: 1.25rem;
+}
+@media (max-width: 768px) {
+  .listOfFlight .flights {
+    width: 100%;
+  }
 }
 .listOfFlight .flight-card {
   background-color: var(--main-gray);
-  margin: 10px;
+  margin: 0.625rem;
   border-radius: 10px;
-  height: 20vh;
-  margin-right: 20px;
-  padding: 10px;
+  height: auto;
+  margin-right: 1.25rem;
+  padding: 0.625rem;
   display: flex;
+  flex-wrap: wrap;
 }
 .listOfFlight .flight-card .flight-info {
   padding: auto;
-  padding-inline: 10px;
+  padding-inline: 0.625rem;
   display: flex;
   width: 75%;
   flex-direction: column;
@@ -203,6 +377,11 @@ select[type=date]::-webkit-calendar-picker-indicator {
   width: 20%;
   border-color: var(--main-orange);
   color: var(--main-orange);
+}
+@media (max-width: 480px) {
+  .listOfFlight .flight-card .flight-info .time hr {
+    width: 10%;
+  }
 }
 .listOfFlight .flight-card .flight-info .time,
 .listOfFlight .flight-card .flight-info .trip-towns,
@@ -245,10 +424,32 @@ select[type=date]::-webkit-calendar-picker-indicator {
   font-size: 300%;
   font-weight: 700;
 }
+.listOfFlight .flight-card .flight-price button {
+  height: 5vh;
+}
+@media (max-width: 768px) {
+  .listOfFlight .flight-card {
+    height: auto;
+    flex-direction: column;
+  }
+  .listOfFlight .flight-card .flight-info {
+    width: 100%;
+  }
+  .listOfFlight .flight-card .flight-price {
+    width: 100%;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+}
 .listOfFlight .sortFlights {
   display: flex;
   flex-direction: column;
   width: 30%;
+}
+@media (max-width: 768px) {
+  .listOfFlight .sortFlights {
+    flex-direction: row;
+  }
 }
 .listOfFlight .sortFlights .stops {
   text-align: center;
@@ -256,12 +457,17 @@ select[type=date]::-webkit-calendar-picker-indicator {
   font-weight: bold;
   background-color: var(--main-gray);
   border-radius: 10px;
-  height: 20vh;
-  margin: 20px;
-  padding: 10px;
+  height: auto;
+  margin: 1.25rem;
+  padding: 0.625rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+}
+@media (max-width: 768px) {
+  .listOfFlight .sortFlights .stops {
+    width: 50%;
+  }
 }
 .listOfFlight .sortFlights .stops input {
   font-size: 75%;
@@ -269,36 +475,74 @@ select[type=date]::-webkit-calendar-picker-indicator {
 .listOfFlight .sortFlights .stops hr {
   width: 100%;
 }
-.listOfFlight .sort {
-  font-size: 150%;
+@media (max-width: 768px) {
+  .listOfFlight .sortFlights {
+    width: 100%;
+  }
+}
+.listOfFlight .sortFlights .sort {
+  font-size: 110%;
   font-weight: bold;
   background-color: var(--main-gray);
   border-radius: 10px;
-  height: 10vh;
-  margin: 20px;
-  padding: 10px;
+  height: 50px;
+  margin: 1.25rem;
+  padding: 0.625rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   text-align: center;
 }
-.listOfFlight .sort hr {
-  border-color: white;
+@media (max-width: 768px) {
+  .listOfFlight .sortFlights .sort {
+    width: 50%;
+  }
 }
-.listOfFlight .sort .sortButton {
+.listOfFlight .sortFlights .sort hr {
+  border-color: white;
+  background-color: white;
+}
+@media (max-width: 768px) {
+  .listOfFlight .sortFlights .sort hr {
+    width: 80%;
+  }
+}
+.listOfFlight .sortFlights .sort .sortButton {
   display: flex;
   flex-direction: row;
   background-color: var(--main-orange);
-  height: 60%;
-  margin: -10px;
+  height: 70%;
+  margin: -0.625rem;
   border-radius: 10px;
 }
-.listOfFlight .sort .sortButton .sortButtonTime, .listOfFlight .sort .sortButton .sortButtonPrice {
+@media (max-width: 768px) {
+  .listOfFlight .sortFlights .sort .sortButton {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+  }
+}
+.listOfFlight .sortFlights .sort .sortButton .sortButtonTime,
+.listOfFlight .sortFlights .sort .sortButton .sortButtonPrice {
+  text-align: center;
   background-color: var(--main-orange);
   color: white;
   border: none;
   border-radius: 10px;
   width: 50%;
+}
+@media (max-width: 768px) {
+  .listOfFlight .sortFlights .sort .sortButton .sortButtonTime,
+  .listOfFlight .sortFlights .sort .sortButton .sortButtonPrice {
+    font-size: large;
+    width: 100%;
+    height: 45%;
+  }
+}
+@media (max-width: 768px) {
+  .listOfFlight .sortFlights .sort {
+    height: auto;
+  }
 }
 
 .order-button {
@@ -316,10 +560,10 @@ select[type=date]::-webkit-calendar-picker-indicator {
   flex-direction: column;
 }
 .registration-form .return {
-  margin: 15px;
+  margin: 0.9375rem;
 }
 .registration-form .return .labelForReturn {
-  font-size: 20px;
+  font-size: 1.25rem;
   font-weight: bold;
 }
 .registration-form .return .returnBackToMainPage {
@@ -327,24 +571,30 @@ select[type=date]::-webkit-calendar-picker-indicator {
   background-color: white;
 }
 .registration-form .return .returnBackToMainPage img {
-  width: 20px;
-  height: 20px;
+  width: 1.25rem;
+  height: 1.25rem;
   cursor: pointer;
 }
 .registration-form .registrationInfo {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
 }
 .registration-form .registrationInfo .registrationFlight {
   background-color: var(--main-gray);
-  margin: 10px;
+  margin: 0.625rem;
   border-radius: 10px;
-  height: 20vh;
-  margin-right: 20px;
-  padding: 10px;
+  height: auto;
+  margin-right: 1.25rem;
+  padding: 0.625rem;
   display: flex;
   width: 60%;
   flex-direction: column;
+}
+@media (max-width: 768px) {
+  .registration-form .registrationInfo .registrationFlight {
+    width: 100%;
+  }
 }
 .registration-form .registrationInfo .registrationFlight .time {
   display: flex;
@@ -383,50 +633,62 @@ select[type=date]::-webkit-calendar-picker-indicator {
 }
 .registration-form .registrationInfo .busInfo {
   background-color: var(--main-gray);
-  margin: 10px;
+  margin: 0.625rem;
   border-radius: 10px;
-  height: 20vh;
-  margin-right: 20px;
-  padding: 10px;
+  height: auto;
+  margin-right: 1.25rem;
+  padding: 0.625rem;
   display: flex;
   width: 30%;
   flex-direction: column;
 }
+@media (max-width: 768px) {
+  .registration-form .registrationInfo .busInfo {
+    width: 100%;
+  }
+}
 .registration-form .registrationInfo .busInfo .labelForInfo {
-  margin: 10px;
+  margin: 0.625rem;
   font-weight: bold;
   font-size: large;
 }
 .registration-form .registrationInfo .busInfo .busModel {
   color: var(--dark-gray);
-  margin-top: 20px;
+  margin-top: 1.25rem;
 }
 .registration-form .clientInfo {
   display: flex;
   flex-direction: row;
-  height: 60vh;
+  flex-wrap: wrap;
+  height: auto;
 }
 .registration-form .clientInfo .clientContactInfo {
   background-color: white;
-  margin: 10px;
+  margin: 0.625rem;
   border-radius: 10px;
-  height: 100%;
-  margin-right: 20px;
-  padding: 10px;
+  height: auto;
+  margin-right: 1.25rem;
+  padding: 0.625rem;
   display: flex;
   width: 60%;
   flex-direction: column;
   color: var(--gray-black);
 }
+@media (max-width: 768px) {
+  .registration-form .clientInfo .clientContactInfo {
+    width: 100%;
+    align-content: center;
+  }
+}
 .registration-form .clientInfo .clientContactInfo div {
-  margin-left: 10px;
+  margin-left: 0.625rem;
   color: black;
   font-weight: bold;
   font-size: large;
-  margin-bottom: 10px;
+  margin-bottom: 0.625rem;
 }
 .registration-form .clientInfo .clientContactInfo label {
-  margin-top: 10px;
+  margin-top: 0.625rem;
 }
 .registration-form .clientInfo .clientContactInfo input {
   border-radius: 15px;
@@ -434,23 +696,28 @@ select[type=date]::-webkit-calendar-picker-indicator {
 }
 .registration-form .clientInfo .ticketType {
   background-color: white;
-  margin: 10px;
+  margin: 0.625rem;
   border-radius: 10px;
-  height: 100%;
-  margin-right: 20px;
-  padding: 10px;
+  height: auto;
+  margin-right: 1.25rem;
+  padding: 0.625rem;
   display: flex;
-  width: 60%;
+  width: 30%;
   flex-direction: column;
   color: var(--gray-black);
 }
+@media (max-width: 768px) {
+  .registration-form .clientInfo .ticketType {
+    width: 100%;
+  }
+}
 .registration-form .clientInfo .ticketType .ticketText {
-  margin-left: 10px;
-  margin-bottom: 20px;
+  margin-left: 0.625rem;
+  margin-bottom: 1.25rem;
   color: black;
   font-weight: bold;
   font-size: large;
-  margin-bottom: 10px;
+  margin-bottom: 0.625rem;
 }
 .registration-form .clientInfo .ticketType form {
   background-color: var(--main-gray);
@@ -459,10 +726,15 @@ select[type=date]::-webkit-calendar-picker-indicator {
   border-radius: 10px;
   height: -moz-max-content;
   height: max-content;
-  margin-block: 20px;
+  margin-block: 1.25rem;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+}
+@media (max-width: 786px) {
+  .registration-form .clientInfo .ticketType form {
+    flex-direction: column;
+  }
 }
 .registration-form .clientInfo .ticketType form .adult,
 .registration-form .clientInfo .ticketType form .benefit {
@@ -482,8 +754,8 @@ select[type=date]::-webkit-calendar-picker-indicator {
 }
 .registration-form .clientInfo .ticketType form .adult button img,
 .registration-form .clientInfo .ticketType form .benefit button img {
-  height: 20px;
-  width: 20px;
+  height: 1.25rem;
+  width: 1.25rem;
 }
 .registration-form .clientInfo .ticketType form .adult input[type=number]::-webkit-outer-spin-button,
 .registration-form .clientInfo .ticketType form .adult input[type=number]::-webkit-inner-spin-button,
@@ -494,20 +766,20 @@ select[type=date]::-webkit-calendar-picker-indicator {
 }
 .registration-form .clientInfo .ticketType form .adult input,
 .registration-form .clientInfo .ticketType form .benefit input {
-  width: 25px;
-  margin-left: 5px;
+  width: 1.5625rem;
+  margin-left: 0.3125rem;
 }
 .registration-form .clientInfo .ticketType .textAboutbenefit {
   text-align: end;
-  margin-block: 20px;
+  margin-block: 1.25rem;
 }
 .registration-form .clientInfo .ticketType .resultPrice {
   font-family: "Montserrat-Bold";
   color: black;
   font-weight: 700;
-  font-size: xx-large;
+  font-size: 2rem;
   text-align: end;
-  margin-bottom: 10px;
+  margin-bottom: 0.625rem;
 }
 .registration-form .clientInfo .ticketType .buttonsForBookOrBuy {
   display: flex;
@@ -516,11 +788,11 @@ select[type=date]::-webkit-calendar-picker-indicator {
 }
 .registration-form .clientInfo .ticketType .buttonsForBookOrBuy .bookButton,
 .registration-form .clientInfo .ticketType .buttonsForBookOrBuy .buyButton {
-  width: 45%;
+  width: 48%;
   background-color: var(--main-orange);
   border: none;
   border-radius: 20px;
-  padding: 15px;
+  padding: 0.9375rem;
   color: white;
   height: auto;
   font-size: large;

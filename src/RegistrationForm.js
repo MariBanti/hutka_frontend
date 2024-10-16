@@ -1,16 +1,16 @@
 import React from "react";
 
-import imgArrowLeft from "./style/img/Arrow left.png"
-import imgPlus from "./style/img/Plus circle.png"
-import imgMinus from "./style/img/Minus circle.png"
-
+import imgArrowLeft from "./style/img/Arrow left.png";
+import imgPlus from "./style/img/Plus circle.png";
+import imgMinus from "./style/img/Minus circle.png";
 
 const RegistretionForm = () => {
-
 	return (
 		<div className="registration-form">
 			<div className="return">
-				<button className="returnBackToMainPage"><img src={imgArrowLeft} alt="назад"></img></button>
+				<button className="returnBackToMainPage">
+					<img src={imgArrowLeft} alt="назад"></img>
+				</button>
 				<label for="returnBackButton" className="labelForReturn">
 					Вернуться назад
 				</label>
@@ -51,46 +51,73 @@ const RegistretionForm = () => {
 
 			<div className="clientInfo">
 				<form className="clientContactInfo" action="index.html" method="post">
-					<div>
-						Контактная информация
-					</div>
+					<div>Контактная информация</div>
 					<label for="inputName">Имя*</label>
-					<input type="text" id="registrationInputName" placeholder="Имя"></input>
+					<input
+						type="text"
+						id="registrationInputName"
+						placeholder="Имя"
+					></input>
 					<label for="inputSurname">Фамилия*</label>
-					<input type="text" id="registrationInputSurname" placeholder="Фамилия"></input>
+					<input
+						type="text"
+						id="registrationInputSurname"
+						placeholder="Фамилия"
+					></input>
 					<label for="inputMiddleName">Отчество*</label>
-					<input type="text" id="registrationInputMiddleName" placeholder="Отчество"></input>
+					<input
+						type="text"
+						id="registrationInputMiddleName"
+						placeholder="Отчество"
+					></input>
 					<label for="inputPhone">Телефон*</label>
-					<input type="tel" id="registrationInputPhone" autofocus="autofocus" required="required"
-         pattern="\+375\s?[\(]{0,1}9[0-9]{2}[\)]{0,1}\s?\d{3}[-]{0,1}\d{2}[-]{0,1}\d{2}"
-         placeholder="+375(___)___-__-__"></input>
+					<input
+						type="tel"
+						id="registrationInputPhone"
+						autofocus="autofocus"
+						required="required"
+						pattern="\+375\s?[\(]{0,1}9[0-9]{2}[\)]{0,1}\s?\d{3}[-]{0,1}\d{2}[-]{0,1}\d{2}"
+						placeholder="+375(___)___-__-__"
+					></input>
 				</form>
 
 				<div className="ticketType">
-					<div className="ticketText">
-						Тип билета
-					</div>
+					<div className="ticketText">Тип билета</div>
 					<form action="index.html" className="typeForm">
 						<div className="adult">
-						<button type="button" id="minusAdult"><img src={imgMinus} alt="минус"></img></button>
-						<input type="number" value="0" min={1} max={10}></input>
-						<label for="adultTicket">Взрослый</label>
-						<button type="button" id="plusAdult"><img src={imgPlus} alt="плюс"></img></button>
+							<button type="button" id="minusAdult">
+								<img src={imgMinus} alt="минус"></img>
+							</button>
+							<input type="number" value="0" min={1} max={10}></input>
+							<label for="adultTicket">Взрослый</label>
+							<button type="button" id="plusAdult">
+								<img src={imgPlus} alt="плюс"></img>
+							</button>
 						</div>
 						<div className="benefit">
-						<button type="button" id="minusBenefit"><img src={imgMinus} alt="минус"></img></button>
-						<input type="number" min={1} max={10} value="0"></input>
-						<label for="benefitTicket">Льготный</label>
-						<button type="button" id="plusBenefit"><img src={imgPlus} alt="плюс"></img></button>
+							<button type="button" id="minusBenefit">
+								<img src={imgMinus} alt="минус"></img>
+							</button>
+							<input type="number" min={1} max={10} value="0"></input>
+							<label for="benefitTicket">Льготный</label>
+							<button type="button" id="plusBenefit">
+								<img src={imgPlus} alt="плюс"></img>
+							</button>
 						</div>
 					</form>
-					<div className="textAboutbenefit">Льготный билет распространяется на детей до 7 лет, ветеранов и инвалидов 1 группы. При посадке необходимо предъявить подтверждающий документ.</div>
-					<div className="resultPrice">
-						Итого:64 Br
+					<div className="textAboutbenefit">
+						Льготный билет распространяется на детей до 7 лет, ветеранов и
+						инвалидов 1 группы. При посадке необходимо предъявить подтверждающий
+						документ.
 					</div>
+					<div className="resultPrice">Итого:64 Br</div>
 					<div className="buttonsForBookOrBuy">
-						<button type="submit" className="bookButton">забронировать</button>
-						<button type="button" className="buyButton">оплатить</button>
+						<button type="submit" className="bookButton">
+							Забронировать
+						</button>
+						<button type="button" className="buyButton">
+							Оплатить
+						</button>
 					</div>
 				</div>
 			</div>
