@@ -30,7 +30,7 @@ const Flight = () =>{
 				</div>
 		</div>
 		<div className="flight-price">
-				<div className="price">20 Br</div>
+				<div className="price">20Br</div>
 				<button className="order-button">Заказать</button>
 		</div>
 </div>
