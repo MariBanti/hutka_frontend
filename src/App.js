@@ -1,19 +1,23 @@
-
 import React from "react";
-import Header from "./Header"; 
-import BookingForm from "./BookingForm"; 
-import InfoPanel from "./InfoPanel"; 
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import Header from "./Header";
+import MainPage from "./MainPage";
 import Flights from "./Flights";
+import RegistrationForm from "./RegistrationForm";
+import ConfirmedBook from "./ConfirmedBook";
 
 const App = () => {
-
 	return (
 		<div>
 			<Header />
-			<h1>Поездки по самым низким ценам!</h1>
-      <BookingForm/>
-      <Flights/>
-			<InfoPanel />
+			<Router>
+				<Routes>
+					<Route path="/" element={<MainPage />} />
+					<Route path="/trips" element={<Flights />} />
+					<Route path="/booking" element={<RegistrationForm />} />
+					<Route path="/confirmedbook" element={<ConfirmedBook />} />
+				</Routes>
+			</Router>
 		</div>
 	);
 };

@@ -32,7 +32,7 @@ const BookingForm = () => {
                 </select>
             </div>
             <div>
-                <input type="date" className="select_date" />Дата
+                <input type="date" className="select_date" />
             </div>
             <div>
                 <select id="select_pas">
