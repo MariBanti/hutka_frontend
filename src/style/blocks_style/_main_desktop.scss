@@ -32,6 +32,22 @@
 	}
 }
 
+.return {
+	margin: 0.9375rem;
+	.returnBackToMainPage {
+		font-size: 1.25rem;
+		font-weight: bold;
+		border: none;
+		background-color: white;
+
+		img {
+			width: 1.35rem;
+			height: 1.35rem;
+			cursor: pointer;
+		}
+	}
+}
+
 .listOfFlight {
 	display: flex;
 	flex-direction: row-reverse;
@@ -190,6 +206,10 @@
 			flex-direction: column;
 			justify-content: space-between;
 
+			img {
+				height: 50%;
+			}
+
 			@media (max-width: 768px) {
 				width: 50%;
 			}
@@ -208,7 +228,7 @@
 		}
 
 		.sort {
-			font-size: 110%;
+			font-size: large;
 			font-weight: bold;
 			background-color: var(--main-gray);
 			border-radius: 10px;
@@ -219,6 +239,10 @@
 			flex-direction: column;
 			justify-content: space-between;
 			text-align: center;
+
+			img {
+				height: 50%;
+			}
 
 			@media (max-width: 768px) {
 				width: 50%;

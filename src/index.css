@@ -128,32 +128,16 @@ nav a {
   }
 }
 @media (max-width: 480px) {
-  .logo {
-    font-size: 24px;
-    margin-right: 40vw;
-  }
-  .utka_logo {
-    display: none;
-  }
-  nav {
-    display: none;
-  }
-  .registration-button {
-    padding: 6px 10px;
-    margin: 6px;
-    font-size: 12px;
-  }
-}
-@media (max-width: 480px) {
   header {
     padding: 6px 10px;
+    display: flex;
   }
   header .logo {
     font-size: 24px;
+    margin-right: 40%;
   }
-  header nav div a {
-    padding-right: 1vh;
-    font-size: 100%;
+  header nav {
+    display: none;
   }
   header .utka_logo {
     width: 30px;
@@ -164,6 +148,8 @@ nav a {
     margin: 6px;
     font-size: 12px;
   }
+}
+@media (max-width: 480px) {
   .booking-bar {
     height: auto;
     background-color: var(--main-gray);
@@ -203,24 +189,19 @@ nav a {
     flex-basis: 50%;
     padding: 8px;
   }
-  .booking-bar input,
-  .booking-bar select {
-    width: 100%;
-  }
   .booking-bar .search-button {
     width: 100%;
     border-radius: 20px;
   }
   input,
   select {
-    width: 100%;
+    width: 95%;
     padding: 8px;
     font-family: "Montserrat";
     color: #a19d9d;
-    width: 90%;
     padding: 10px;
+    border: var(--main-gray);
     border-radius: 15px;
-    border: none;
     background-color: var(--main-gray);
     outline: none;
   }
@@ -228,7 +209,7 @@ nav a {
   select[type=date] {
     padding: 12px;
     font-size: 12px;
-    width: 97%;
+    width: 93%;
   }
   .search-button {
     height: 40px;
@@ -329,6 +310,21 @@ nav a {
   .panel div {
     width: 100%;
   }
+}
+
+.return {
+  margin: 0.9375rem;
+}
+.return .returnBackToMainPage {
+  font-size: 1.25rem;
+  font-weight: bold;
+  border: none;
+  background-color: white;
+}
+.return .returnBackToMainPage img {
+  width: 1.35rem;
+  height: 1.35rem;
+  cursor: pointer;
 }
 
 .listOfFlight {
@@ -478,6 +474,9 @@ nav a {
   flex-direction: column;
   justify-content: space-between;
 }
+.listOfFlight .sortFlights .stops img {
+  height: 50%;
+}
 @media (max-width: 768px) {
   .listOfFlight .sortFlights .stops {
     width: 50%;
@@ -495,7 +494,7 @@ nav a {
   }
 }
 .listOfFlight .sortFlights .sort {
-  font-size: 110%;
+  font-size: large;
   font-weight: bold;
   background-color: var(--main-gray);
   border-radius: 10px;
@@ -506,6 +505,9 @@ nav a {
   flex-direction: column;
   justify-content: space-between;
   text-align: center;
+}
+.listOfFlight .sortFlights .sort img {
+  height: 50%;
 }
 @media (max-width: 768px) {
   .listOfFlight .sortFlights .sort {
@@ -575,8 +577,6 @@ nav a {
 }
 .registration-form .return {
   margin: 0.9375rem;
-}
-.registration-form .return .labelForReturn {
   font-size: 1.25rem;
   font-weight: bold;
 }
@@ -816,4 +816,28 @@ nav a {
   height: auto;
   font-size: large;
   font-weight: bold;
+}
+
+.bookIsConfirmed {
+  display: flex;
+  flex-direction: column;
+  align-content: space-around;
+  align-items: center;
+  font-size: x-large;
+  color: var(--main-orange);
+  font-weight: bold;
+}
+.bookIsConfirmed img {
+  width: 50%;
+  margin: 10%;
+}
+.bookIsConfirmed button {
+  color: white;
+  background-color: var(--main-orange);
+  border: none;
+  border-radius: 40px;
+  margin: 5%;
+  height: 10vh;
+  width: 30vw;
+  font-size: large;
 }/*# sourceMappingURL=index.css.map */

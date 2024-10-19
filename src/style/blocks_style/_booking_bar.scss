@@ -1,28 +1,5 @@
 @media (max-width: 480px) {
-	header {
-		padding: 6px 10px;
-
-		.logo {
-			font-size: 24px;
-		}
-
-		nav div a {
-			padding-right: 1vh;
-			font-size: 100%;
-		}
-
-		.utka_logo {
-			width: 30px;
-			margin-right: 5px;
-		}
-
-		.registration-button {
-			padding: 6px 10px;
-			margin: 6px;
-			font-size: 12px;
-		}
-	}
-
+	
 	.booking-bar {
 		height: auto;
 		background-color: var(--main-gray);
@@ -67,11 +44,6 @@
 			padding: 8px;
 		}
 
-		input,
-		select {
-			width: 100%;
-		}
-
 		.search-button {
 			width: 100%;
 			border-radius: 20px;
@@ -80,21 +52,20 @@
 
 	input,
 	select {
-		width: 100%;
+		width: 95%;
 		padding: 8px;
 		font-family: "Montserrat";
 		color: #a19d9d;
-		width: 90%;
 		padding: 10px;
+		border:var(--main-gray);
 		border-radius: 15px;
-		border: none;
 		background-color: var(--main-gray);
 		outline: none;
 
 		&[type="date"] {
 			padding: 12px;
 			font-size: 12px;
-			width: 97%;
+			width: 93%;
 		}
 	}
 

@@ -1,19 +1,19 @@
 import React from "react";
+import { useNavigate } from "react-router";
 
 import imgArrowLeft from "./style/img/Arrow left.png";
 import imgPlus from "./style/img/Plus circle.png";
 import imgMinus from "./style/img/Minus circle.png";
 
 const RegistretionForm = () => {
+	const navigate = useNavigate();
+
 	return (
 		<div className="registration-form">
 			<div className="return">
-				<button className="returnBackToMainPage">
-					<img src={imgArrowLeft} alt="назад"></img>
+				<button className="returnBackToMainPage" onClick={() => navigate("/")}>
+					<img src={imgArrowLeft} alt="назад"></img>Вернуться назад
 				</button>
-				<label for="returnBackButton" className="labelForReturn">
-					Вернуться назад
-				</label>
 			</div>
 
 			<div className="registrationInfo">
@@ -112,7 +112,7 @@ const RegistretionForm = () => {
 					</div>
 					<div className="resultPrice">Итого:64 Br</div>
 					<div className="buttonsForBookOrBuy">
-						<button type="submit" className="bookButton">
+						<button type="submit" className="bookButton" onClick={()=>navigate('/confirmedbook')}>
 							Забронировать
 						</button>
 						<button type="button" className="buyButton">

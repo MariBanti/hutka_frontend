@@ -1,6 +1,9 @@
 import React from "react";
+import { useNavigate } from "react-router";
 
 const Flight = () =>{
+	const navigate = useNavigate();
+
 	return(
 		<div className="flight-card">
 		<div className="flight-info">
@@ -31,7 +34,7 @@ const Flight = () =>{
 		</div>
 		<div className="flight-price">
 				<div className="price">20Br</div>
-				<button className="order-button">Заказать</button>
+				<button className="order-button" onClick={()=>navigate('/booking')}>Заказать</button>
 		</div>
 </div>
 	);
