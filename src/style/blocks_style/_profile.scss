@@ -1,0 +1,133 @@
+.profile-pages {
+	display: flex;
+	flex-direction: row;
+}
+
+.sections {
+	display: flex;
+	flex-direction: column;
+	border-radius: 7%;
+	width: max-content;
+	height: max-content;
+	margin-top: 8%;
+	margin-left: 3%;
+	background-color: var(--main-gray);
+
+	button {
+		width: 95%;
+		text-align: left;
+		font-size: x-large;
+		text-wrap: nowrap;
+		border-radius: 3px;
+		padding: 10px;
+		padding-right: 15px;
+		color: var(--gray-black);
+		margin-inline: 5px;
+		margin-block: 4px;
+		background-color: var(--main-gray);
+		border-top: none;
+		border-left: none;
+		border-right: none;
+		border-bottom-width: 1px;
+		border-bottom-color: var(--gray-black);
+	}
+
+	button:last-of-type {
+		border-bottom: none;
+	}
+
+	button:hover {
+		color: var(--main-orange);
+	}
+}
+
+.profile-info {
+	width: 70%;
+	height: 80vh;
+	background-color: white;
+	margin-inline: 20px;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	margin-block: 20px;
+
+	.profile-info-contact {
+		width: 65%;
+		background-color: white;
+		margin: 0.625rem;
+		border-radius: 10px;
+		height: auto;
+		margin-right: 1.25rem;
+		padding: 0.625rem;
+		display: flex;
+		width: 60%;
+		flex-direction: column;
+		color: var(--gray-black);
+		font-size: larger;
+
+		@media (max-width: 768px) {
+			width: 100%;
+			align-content: center;
+		}
+
+		div {
+			margin-left: 0.625rem;
+			color: black;
+			font-weight: bold;
+			font-size: large;
+			margin-bottom: 0.625rem;
+		}
+
+		label {
+			margin-top: 0.625rem;
+		}
+
+		input {
+			font-size: large;
+			height: 10%;
+			border-radius: 15px;
+			background-color: var(--main-gray);
+		}
+
+		h2 {
+			color: var(--main-orange);
+		}
+
+		button {
+			margin-top: 20px;
+			background-color: var(--main-orange);
+			color: white;
+			border: none;
+			padding: 10px;
+			border-radius: 30px;
+			font-size: large;
+			width: 90%;
+		}
+
+		button:hover {
+			background-color: var(--dark-gray);
+		}
+	}
+
+	.profile-info-photo {
+		width: 20%;
+		background-color: white;
+		padding: 10px;
+
+		label{
+		color: var(--dark-gray);
+		font-size: small;
+		text-decoration: underline;
+		}
+
+		input{
+			border:none;
+			visibility: hidden;
+		}
+		
+		img {
+			margin-top: 50%;
+			width: 100%;
+		}
+	}
+}

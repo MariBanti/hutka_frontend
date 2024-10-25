@@ -52,19 +52,19 @@ const RegistretionForm = () => {
 			<div className="clientInfo">
 				<form className="clientContactInfo" action="index.html" method="post">
 					<div>Контактная информация</div>
-					<label for="inputName">Имя*</label>
-					<input
-						type="text"
-						id="registrationInputName"
-						placeholder="Имя"
-					></input>
 					<label for="inputSurname">Фамилия*</label>
 					<input
 						type="text"
 						id="registrationInputSurname"
 						placeholder="Фамилия"
 					></input>
-					<label for="inputMiddleName">Отчество*</label>
+					<label for="inputName">Имя*</label>
+					<input
+						type="text"
+						id="registrationInputName"
+						placeholder="Имя"
+					></input>
+					<label for="inputMiddleName">Отчество</label>
 					<input
 						type="text"
 						id="registrationInputMiddleName"
