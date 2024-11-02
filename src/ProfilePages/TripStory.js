@@ -14,6 +14,7 @@ const TripStory = () =>{
 				<FutureTrip/>
 				<h3>Совершенные поездки</h3>
 				<PastTrip/>
+				<PastTrip/>
 			</div>
 		</div>
 	);
