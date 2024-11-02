@@ -12,11 +12,15 @@ const Header = () => {
     const navigate = useNavigate();
 
     const handleNavigation = () => {
-        navigate('/profile/profile-info'); // Используйте функцию для навигации
+        navigate('/profile/profile-info'); 
     };
 
     const handleReturn = () =>{
         navigate('/');
+    }
+
+    const handleNavToEnter = () =>{
+        navigate('/enter/enter-or-registration');
     }
     
     return (
@@ -38,7 +42,7 @@ const Header = () => {
                 </div>
             </nav>
              <button className='avatar' type='button' onClick={handleNavigation}><img src={imgAvatar} height="50px" alt="Аватар" /></button> 
-            <button className="registration-button">Регистрация</button>
+            <button className="registration-button" onClick={handleNavToEnter}>Вход</button>
         </header>
     );
 };

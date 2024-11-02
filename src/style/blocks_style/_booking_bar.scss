@@ -105,6 +105,7 @@
 		width: 90%;
 		padding: 10px;
 		border-radius: 5px;
+		font-size: large;
 		border: none;
 		background-color: var(--main-gray);
 		outline: none;
@@ -115,7 +116,7 @@
 			transform: translate(-50%, -50%);
 			top: 50%;
 			left: 50%;
-			font-size: 14px;
+			font-size: large;
 			border: none;
 			outline: none;
 			border-radius: 5px;
@@ -133,7 +134,8 @@
 		padding: 0;
 		margin: 0;
 		height: 100;
-		width: 90px;
+		width: 15%;
+		font-size: large;
 		border-radius: 30px;
 		cursor: pointer;
 	}
