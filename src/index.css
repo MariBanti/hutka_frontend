@@ -250,9 +250,10 @@ nav a {
     color: #a19d9d;
     width: 90%;
     padding: 10px;
-    border-radius: 5px;
+    border-radius: 15px;
+    height: 95%;
     font-size: large;
-    border: none;
+    border: 1px solid var(--main-gray);
     background-color: var(--main-gray);
     outline: none;
   }
@@ -263,10 +264,11 @@ nav a {
     transform: translate(-50%, -50%);
     top: 50%;
     left: 50%;
+    height: 20%;
     font-size: large;
-    border: none;
+    border-color: var(--main-gray);
     outline: none;
-    border-radius: 5px;
+    border-radius: 15px;
   }
   input[type=date]::-webkit-calendar-picker-indicator,
   select[type=date]::-webkit-calendar-picker-indicator {
@@ -619,8 +621,6 @@ nav a {
   background-color: var(--main-gray);
   margin: 0.625rem;
   border-radius: 10px;
-  height: auto;
-  margin-right: 1.25rem;
   padding: 0.625rem;
   display: flex;
   width: 60%;
@@ -640,11 +640,9 @@ nav a {
 .registration-form .registrationInfo .registrationFlight .time hr {
   width: 20%;
 }
-.registration-form .registrationInfo .registrationFlight .time,
-.registration-form .registrationInfo .registrationFlight .trip-towns,
-.registration-form .registrationInfo .registrationFlight .other-info {
+.registration-form .registrationInfo .registrationFlight .trip-towns {
   display: flex;
-  flex-grow: 1;
+  flex-direction: row;
   justify-content: space-between;
 }
 .registration-form .registrationInfo .registrationFlight .trip-towns .city {
@@ -670,8 +668,6 @@ nav a {
   background-color: var(--main-gray);
   margin: 0.625rem;
   border-radius: 10px;
-  height: auto;
-  margin-right: 1.25rem;
   padding: 0.625rem;
   display: flex;
   width: 30%;
@@ -695,14 +691,11 @@ nav a {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  height: auto;
 }
 .registration-form .clientInfo .clientContactInfo {
   background-color: white;
   margin: 0.625rem;
   border-radius: 10px;
-  height: auto;
-  margin-right: 1.25rem;
   padding: 0.625rem;
   display: flex;
   width: 60%;
@@ -712,7 +705,6 @@ nav a {
 @media (max-width: 768px) {
   .registration-form .clientInfo .clientContactInfo {
     width: 100%;
-    align-content: center;
   }
 }
 .registration-form .clientInfo .clientContactInfo div {
@@ -728,13 +720,12 @@ nav a {
 .registration-form .clientInfo .clientContactInfo input {
   border-radius: 15px;
   background-color: var(--main-gray);
+  border: 2px solid var(--main-gray);
 }
 .registration-form .clientInfo .ticketType {
   background-color: white;
   margin: 0.625rem;
   border-radius: 10px;
-  height: auto;
-  margin-right: 1.25rem;
   padding: 0.625rem;
   display: flex;
   width: 30%;
@@ -752,57 +743,32 @@ nav a {
   color: black;
   font-weight: bold;
   font-size: large;
-  margin-bottom: 0.625rem;
 }
-.registration-form .clientInfo .ticketType form {
-  background-color: var(--main-gray);
-  width: -moz-min-content;
-  width: min-content;
-  border-radius: 10px;
-  height: -moz-max-content;
-  height: max-content;
-  margin-block: 1.25rem;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
-@media (max-width: 786px) {
-  .registration-form .clientInfo .ticketType form {
-    flex-direction: column;
-  }
-}
-.registration-form .clientInfo .ticketType form .adult,
-.registration-form .clientInfo .ticketType form .benefit {
+.registration-form .clientInfo .ticketType .adult,
+.registration-form .clientInfo .ticketType .benefit {
   display: flex;
   align-items: center;
-  font-size: larger;
+  margin-bottom: 1rem;
+  background-color: var(--main-gray);
+  border-radius: 10px;
 }
-.registration-form .clientInfo .ticketType form .adult label,
-.registration-form .clientInfo .ticketType form .benefit label {
-  margin-right: 0px;
-}
-.registration-form .clientInfo .ticketType form .adult button,
-.registration-form .clientInfo .ticketType form .benefit button {
+.registration-form .clientInfo .ticketType .adult button,
+.registration-form .clientInfo .ticketType .benefit button {
   border: none;
   background-color: var(--main-gray);
   align-items: center;
 }
-.registration-form .clientInfo .ticketType form .adult button img,
-.registration-form .clientInfo .ticketType form .benefit button img {
+.registration-form .clientInfo .ticketType .adult button img,
+.registration-form .clientInfo .ticketType .benefit button img {
   height: 1.25rem;
   width: 1.25rem;
 }
-.registration-form .clientInfo .ticketType form .adult input[type=number]::-webkit-outer-spin-button,
-.registration-form .clientInfo .ticketType form .adult input[type=number]::-webkit-inner-spin-button,
-.registration-form .clientInfo .ticketType form .benefit input[type=number]::-webkit-outer-spin-button,
-.registration-form .clientInfo .ticketType form .benefit input[type=number]::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-.registration-form .clientInfo .ticketType form .adult input,
-.registration-form .clientInfo .ticketType form .benefit input {
-  width: 1.5625rem;
-  margin-left: 0.3125rem;
+.registration-form .clientInfo .ticketType .adult input[type=number],
+.registration-form .clientInfo .ticketType .benefit input[type=number] {
+  width: 2rem;
+  height: 50%;
+  margin: 0 0.5rem;
+  border: 2px solid var(--main-gray);
 }
 .registration-form .clientInfo .ticketType .textAboutbenefit {
   text-align: end;
@@ -818,7 +784,6 @@ nav a {
 }
 .registration-form .clientInfo .ticketType .buttonsForBookOrBuy {
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
 }
 .registration-form .clientInfo .ticketType .buttonsForBookOrBuy .bookButton,
@@ -1194,11 +1159,11 @@ nav a {
 .registration {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  align-self: center;
-  align-content: space-around;
+  justify-content: center;
+  align-items: center;
   width: 100%;
-  height: 60%;
+  min-height: 80vh;
+  z-index: 1;
 }
 .enter-or-registration p,
 .registration p {
@@ -1293,4 +1258,75 @@ nav a {
 .registration .button-next img {
   width: 30px;
   margin: 1px;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 5px;
+  max-width: 500px;
+  width: 80%;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal {
+  align-self: center;
+  justify-self: center;
+  display: flex;
+  flex-direction: column;
+  width: 20vw;
+  height: 40vh;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  padding-inline: 20%;
+  z-index: 1001;
+}
+.modal h2 {
+  background-color: white;
+  font-size: x-large;
+  margin-top: 0px;
+  padding: 10px;
+  border-radius: 8px;
+  color: var(--main-orange);
+}
+.modal p {
+  font-size: large;
+  font-weight: 600;
+}
+
+.modal button {
+  margin: 15px;
+  width: 50%;
+  padding: 10px;
+  background-color: var(--main-orange);
+  border: none;
+  border-radius: 20px;
+  color: white;
 }/*# sourceMappingURL=index.css.map */
