@@ -9,11 +9,15 @@ header {
 }
 
 .logo {
+  button{
   font-family: Shantell_Sans, Montserrat, Arial;
   font-size: 45px;
   font-weight: bold;
   color: var(--white);
   flex-shrink: 0;
+  border: none;
+  background-color:var(--main-orange);
+  }
 }
 
 .utka_logo {
@@ -44,11 +48,16 @@ nav a {
   flex-grow: 1;
 }
 
+.avatar{
+  border:none;
+  background-color: var(--main-orange);
+}
+
 .registration-button {
-  background-color: var(--white);
-  color: var(--main-orange);
+  background-color: var(--main-orange);
+  color: white;
   border: 2px solid var(--main-orange);
-  padding: 10px 20px;
+  font-size: 170%;
   margin: 10px;
   border-radius: 20px;
   cursor: pointer;

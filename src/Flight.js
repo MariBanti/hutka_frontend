@@ -10,7 +10,7 @@ const Flight = () =>{
 				<div className="time">
 						<div className="departure-time">12:30</div>
 						<hr></hr>
-						<div className="travel-time">90мин</div>
+						<div className="travel-time">1 ч 30 мин</div>
 						<hr></hr>
 						<div className="arrival-time">14:00</div>
 				</div>
@@ -26,14 +26,12 @@ const Flight = () =>{
 				</div>
 				<div className="other-info">
 						<div className='bus-info'>
-								<div className="bus-model">Марка: Mercedes</div>
-								<div className="bus-number">Номер: 1234</div>
+								<div className="bus-model">Машина: Mercedes-Sprinter, MV 2903-5</div>
 						</div>
-						<a href="#Detail" className="details-link">Детали</a>
 				</div>
 		</div>
 		<div className="flight-price">
-				<div className="price">20Br</div>
+				<div className="price">20 Br</div>
 				<button className="order-button" onClick={()=>navigate('/booking')}>Заказать</button>
 		</div>
 </div>

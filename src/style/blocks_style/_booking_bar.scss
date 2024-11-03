@@ -104,8 +104,10 @@
 		color: #a19d9d;
 		width: 90%;
 		padding: 10px;
-		border-radius: 5px;
-		border: none;
+		border-radius: 15px;
+		height: 95%;
+		font-size: large;
+		border: 1px solid var(--main-gray);
 		background-color: var(--main-gray);
 		outline: none;
 
@@ -115,10 +117,11 @@
 			transform: translate(-50%, -50%);
 			top: 50%;
 			left: 50%;
-			font-size: 14px;
-			border: none;
+			height: 20%;
+			font-size: large;
+			border-color: var(--main-gray);
 			outline: none;
-			border-radius: 5px;
+			border-radius: 15px;
 
 			&::-webkit-calendar-picker-indicator {
 				color: var(--dark-gray);
@@ -133,7 +136,8 @@
 		padding: 0;
 		margin: 0;
 		height: 100;
-		width: 90px;
+		width: 15%;
+		font-size: large;
 		border-radius: 30px;
 		cursor: pointer;
 	}

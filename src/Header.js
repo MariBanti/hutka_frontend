@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from 'react-router';
 
 import imgUtka from './style/img/utka.png'
 import imgHelpCircle from './style/img/Help circle.png'
@@ -8,10 +9,24 @@ import imgAvatar from './style/img/Generic avatar.png'
 
 
 const Header = () => {
+    const navigate = useNavigate();
+
+    const handleNavigation = () => {
+        navigate('/profile/profile-info'); 
+    };
+
+    const handleReturn = () =>{
+        navigate('/');
+    }
+
+    const handleNavToEnter = () =>{
+        navigate('/enter/enter-or-registration');
+    }
+    
     return (
         <header>
             <img className="utka_logo" src={imgUtka} alt="Logo" width="70px" />
-            <div className="logo">Хутка!</div>
+            <div className="logo"><button type='button' onClick={handleReturn}>Хутка!</button></div>
             <nav>
                 <div>
                     <img src={imgHelpCircle} height="30px" alt="Помощь" />
@@ -26,8 +41,8 @@ const Header = () => {
                     <a href="#Salary">Акции</a>
                 </div>
             </nav>
-            <img src={imgAvatar} height="50px" alt="Аватар" />
-            <button className="registration-button">Регистрация</button>
+             <button className='avatar' type='button' onClick={handleNavigation}><img src={imgAvatar} height="50px" alt="Аватар" /></button> 
+            <button className="registration-button" onClick={handleNavToEnter}>Вход</button>
         </header>
     );
 };
