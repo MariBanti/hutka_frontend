@@ -1,5 +1,6 @@
 :root {
   --main-orange: #ff9f00;
+  --background-orange: #FFDCA7;
   --main-gray: #f4f4f4;
   --dark-gray: #a19d9d;
   --gray-black: #626262;
@@ -291,42 +292,6 @@ nav a {
     cursor: pointer;
   }
 }
-.panel {
-  background-color: #ffdca7;
-  font-family: Montserrat;
-  margin-top: 2rem;
-  height: auto;
-  width: auto;
-  display: flex;
-  flex-wrap: wrap;
-  padding: 1rem;
-  padding-top: 2rem;
-  justify-content: space-between;
-}
-@media (max-width: 786px) {
-  .panel {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-}
-.panel div {
-  width: 30%;
-  text-align: center;
-  justify-content: center;
-}
-@media (max-width: 768px) {
-  .panel div {
-    width: 45%;
-    flex-direction: row;
-  }
-}
-@media (max-width: 480px) {
-  .panel div {
-    width: 100%;
-  }
-}
-
 .return {
   margin: 0.9375rem;
 }
@@ -592,6 +557,62 @@ nav a {
   border-radius: 20px;
   color: white;
   font-size: medium;
+}
+
+.panel {
+  background-color: #ffdca7;
+  font-family: Montserrat;
+  margin-top: 2rem;
+  height: auto;
+  width: auto;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 1rem;
+  padding-top: 2rem;
+  justify-content: space-between;
+}
+@media (max-width: 786px) {
+  .panel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+.panel div {
+  width: 30%;
+  text-align: center;
+  justify-content: center;
+}
+@media (max-width: 768px) {
+  .panel div {
+    width: 45%;
+    flex-direction: row;
+  }
+}
+@media (max-width: 480px) {
+  .panel div {
+    width: 100%;
+  }
+}
+
+.sales {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+}
+.sales h2 {
+  color: var(--main-orange);
+  align-self: center;
+}
+.sales .sale {
+  background-color: var(--background-orange);
+  margin-block: 10px;
+  margin-inline: 15vw;
+  padding: 25px;
+  border-radius: 30px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 .registration-form {
