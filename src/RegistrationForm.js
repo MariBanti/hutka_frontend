@@ -34,7 +34,7 @@ const RegistretionForm = () => {
 		}
 
 		if (adultTickets === 0 && benefitTickets === 0) {
-			setErrorMessage("Пожалуйста, выберите хотя бы один билет.");
+			setErrorMessage("Пожалуйста, выберите количество билетов.");
 			setModalVisible(true);
 			return;
 		}
