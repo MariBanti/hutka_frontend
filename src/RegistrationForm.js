@@ -6,7 +6,7 @@ import imgArrowLeft from "./style/img/Arrow left.png";
 import imgPlus from "./style/img/Plus circle.png";
 import imgMinus from "./style/img/Minus circle.png";
 
-const RegistretionForm = () => {
+const RegistrationForm = () => {
 	const navigate = useNavigate();
 
 	const [surname, setSurname] = useState("");
@@ -53,7 +53,7 @@ const RegistretionForm = () => {
 
 		console.log("Данные для бронирования:", registrationData);
 
-		navigate("/confirmedbook");
+		navigate("/confirmed-book");
 	};
 
 	return (
@@ -227,4 +227,4 @@ const RegistretionForm = () => {
 	);
 };
 
-export default RegistretionForm;
+export default RegistrationForm;

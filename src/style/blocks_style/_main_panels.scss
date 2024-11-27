@@ -2,18 +2,20 @@
 	background-color: #ffdca7;
 	font-family: Montserrat;
 	margin-top: 2rem;
-	height: auto;
+	height: 50vh;
 	width: auto;
 	display: flex;
 	flex-wrap: wrap;
 	padding: 1rem;
 	padding-top: 2rem;
 	justify-content: space-between;
+	align-content: center;
 
 	@media (max-width: 786px) {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
+		height: auto;
 	}
 
 	div {
@@ -32,17 +34,17 @@
 	}
 }
 
-.sales{
+.sales {
 	display: flex;
 	flex-direction: column;
-	align-content:center;
+	align-content: center;
 
-	h2{
-		color:var(--main-orange);
-		align-self:center;
+	h2 {
+		color: var(--main-orange);
+		align-self: center;
 	}
 
-	.sale{
+	.sale {
 		background-color: var(--background-orange);
 		margin-block: 10px;
 		margin-inline: 15vw;
@@ -51,6 +53,18 @@
 		display: flex;
 		flex-direction: row;
 		justify-content: space-between;
-		
+	}
+}
+
+.open-chat {
+	background-color: #007bff;
+	color: white;
+	border: none;
+	border-radius: 4px;
+	padding: 10px 20px;
+	cursor: pointer;
+
+	&:hover {
+		background-color: #0056b3;
 	}
 }
