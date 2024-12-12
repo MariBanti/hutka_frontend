@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import ModalError from './ModalError'; 
+import axios from 'axios';
 
 const BookingForm = () => {
     const [from, setFrom] = useState('');
@@ -13,26 +14,32 @@ const BookingForm = () => {
 
     const navigate = useNavigate();
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
         setIsSubmitted(true);
         setErrorMessage('');
-        setModalVisible(false); 
-
+        setModalVisible(false);
+    
         if (!from || !to || !date || !passengers) {
             setErrorMessage('Пожалуйста, заполните все поля.');
-            setModalVisible(true); 
+            setModalVisible(true);
             return;
         }
-
-        const flights = findFlights({ from, to, date, passengers });
-        
-        if (flights) {
-            navigate('/trips', { state: { flights } });
-        } else {
-            console.warn('Рейсы не найдены');
+    
+        try {
+            const flights = await findFlights({ from, to, date, passengers });
+    
+            if (flights && flights.length > 0) {
+                navigate('/trips', { state: { flights } });
+            } else {
+                setErrorMessage('Рейсы не найдены.');
+                setModalVisible(true);
+            }
+        } catch (error) {
+            console.error('Ошибка при отправке формы:', error);
         }
     };
+    
 
     const bookingData = {
         from,
@@ -43,8 +50,22 @@ const BookingForm = () => {
 
     console.log("Данные для поиска рейс:", bookingData);
 
-    const findFlights = ({ from, to, date, passengers }) => {
-        return from && to && date && passengers ? ['Рейс 1', 'Рейс 2'] : null;
+    const findFlights = async ({ from, to, date, passengers }) => {
+        try {
+            const response = await axios.post(`${process.env.REACT_APP_API_URL}/api/flights`, {
+                from,
+                to,
+                date,
+                passengers,
+            });
+    
+            return response.data.flights; 
+        } catch (error) {
+            console.error('Ошибка при поиске рейсов:', error);
+            setErrorMessage('Произошла ошибка при поиске рейсов. Попробуйте еще раз.');
+            setModalVisible(true);
+            return null;
+        }
     };
 
     const closeModal = () => {

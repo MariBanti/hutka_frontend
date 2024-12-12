@@ -9,7 +9,7 @@ const EnterOrRegistration = () => {
 	const [modalVisible, setModalVisible] = useState(false);
 	const [isSubmitted, setIsSubmitted] = useState(false);
 
-	const handleNavToCode = (e) => {
+	const handleNavToCode = e => {
 		e.preventDefault();
 		setErrorMessage("");
 		setIsSubmitted(true);
@@ -34,12 +34,12 @@ const EnterOrRegistration = () => {
 			<h1>Вход или регистрация</h1>
 			<label htmlFor="reg-phone-number">Введите номер телефона</label>
 			<input
-				type="tel" 
+				type="tel"
 				id="reg-phone-number"
 				placeholder="+375(xx)xxx-xx-xx"
 				style={{ borderColor: isSubmitted && !phone ? "red" : "" }}
 				value={phone}
-				onChange={(e) => setPhone(e.target.value)}
+				onChange={e => setPhone(e.target.value)}
 			/>
 			<button type="button" className="button" onClick={handleNavToCode}>
 				Войти

@@ -1,4 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+import { useLocation } from "react-router";
 import { useNavigate } from "react-router";
 import ModalError from "./ModalError";
 
@@ -15,11 +17,20 @@ const RegistrationForm = () => {
 	const [phone, setPhone] = useState("");
 	const [adultTickets, setAdultTickets] = useState(0);
 	const [benefitTickets, setBenefitTickets] = useState(0);
+	const [price, setPrice] = useState(0);
 	const [modalVisible, setModalVisible] = useState(false);
 	const [errorMessage, setErrorMessage] = useState("");
 	const [isSubmitted, setIsSubmitted] = useState(false);
+	const location = useLocation();
+	const flightData = location.state || {};
 
-	const handleSubmit = e => {
+	useEffect(() => {
+		const adultPrice = 10;
+		const benefitPrice = 5;
+		setPrice(adultTickets * adultPrice + benefitTickets * benefitPrice);
+	}, [adultTickets, benefitTickets]);
+
+	const handleSubmit = async e => {
 		e.preventDefault();
 		setErrorMessage("");
 		setIsSubmitted(true);
@@ -53,13 +64,43 @@ const RegistrationForm = () => {
 
 		console.log("Данные для бронирования:", registrationData);
 
-		navigate("/confirmed-book");
+		try {
+			const response = await axios.post(
+				`${process.env.REACT_APP_API_URL}/api/registration`,
+				registrationData
+			);
+
+			console.log("Ответ сервера:", response.data);
+			navigate("/confirmed-book");
+		} catch (error) {
+			console.error("Ошибка при отправке данных:", error);
+			setErrorMessage(
+				"Произошла ошибка при отправке данных. Попробуйте снова."
+			);
+			setModalVisible(true);
+		}
 	};
 
 	return (
 		<div className="registration-form">
 			<div className="return">
-				<button className="returnBackToMainPage" onClick={() => navigate("/")}>
+				<button
+					className="returnBackToMainPage"
+					onClick={() => {
+						navigate("/confirmed-book", {
+							state: {
+								surname,
+								name,
+								middleName,
+								phone,
+								adultTickets,
+								benefitTickets,
+								price,
+								flightData,
+							},
+						});
+					}}
+				>
 					<img src={imgArrowLeft} alt="назад" />
 					Вернуться назад
 				</button>
@@ -68,20 +109,34 @@ const RegistrationForm = () => {
 			<div className="registrationInfo">
 				<div className="registrationFlight">
 					<div className="time">
-						<div className="departure-time">12:30</div>
+						<div className="departure-time">
+							{flightData.departureTime || "Не указано"}
+						</div>
 						<hr />
-						<div className="travel-time">90мин</div>
+						<div className="travel-time">
+							{flightData.travelTime || "Не указано"}
+						</div>
 						<hr />
-						<div className="arrival-time">14:00</div>
+						<div className="arrival-time">
+							{flightData.arrivalTime || "Не указано"}
+						</div>
 					</div>
 					<div className="trip-towns">
 						<div className="departure">
-							<div className="city">Минск</div>
-							<div className="station">Центральный автовокзал</div>
+							<div className="city">
+								{flightData.departureCity || "Не указано"}
+							</div>
+							<div className="station">
+								{flightData.departureStation || "Не указано"}
+							</div>
 						</div>
 						<div className="arrival">
-							<div className="city">Гродно</div>
-							<div className="station">Автовокзал</div>
+							<div className="city">
+								{flightData.arrivalCity || "Не указано"}
+							</div>
+							<div className="station">
+								{flightData.arrivalStation || "Не указано"}
+							</div>
 						</div>
 					</div>
 				</div>
@@ -89,11 +144,11 @@ const RegistrationForm = () => {
 				<div className="busInfo">
 					<div className="labelForInfo">Информация о машине</div>
 					<div className="busModel">
-						Модель: Mercedez-Benz Sprinter
+						Модель: {flightData.busModel || "Не указано"}
 						<br />
-						Цвет: Белый
+						Цвет: {flightData.busColor || "Не указано"}
 						<br />
-						Номер: 3780 MP-7
+						Номер: {flightData.busNumber || "Не указано"}
 					</div>
 				</div>
 			</div>
@@ -203,9 +258,8 @@ const RegistrationForm = () => {
 						инвалидов 1 группы. При посадке необходимо предъявить подтверждающий
 						документ.
 					</div>
-					<div className="resultPrice">
-						Итого: {0 + adultTickets * 10 + benefitTickets * 5} Br
-					</div>
+								<div className="resultPrice">Итого: {price} Br</div>
+
 					<div className="buttonsForBookOrBuy">
 						<button type="button" className="bookButton" onClick={handleSubmit}>
 							Забронировать
