@@ -5,6 +5,7 @@ import InfoPanel from "./InfoPanel";
 import Sales from "./Sales";
 import ChatButton from "./Chat/ChatButton";
 import ChatWindow from "./Chat/ChatWindow";
+import Footer from "./Footer";
 
 const MainPage = () => {
 	useEffect(() => {
@@ -30,6 +31,9 @@ const MainPage = () => {
 			<InfoPanel />
 			<div id="main-page-sales">
 				<Sales />
+			</div>
+			<div id="main-page-contacts">
+				<Footer />
 			</div>
 			<ChatButton onClick={toggleChat} />
 			{isChatOpen && <ChatWindow onClose={toggleChat} />}

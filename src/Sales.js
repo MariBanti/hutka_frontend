@@ -6,9 +6,9 @@ import imgGift from "./style/img/Gift.png";
 
 const Sales = () =>{
 	return (<section className="sales">
-		<h2>
+		<h1>
 			<b>Акции</b>
-		</h2>
+		</h1>
 		<div className="sale">
 			<div>
 				<h4>Праздник повсюду</h4>
